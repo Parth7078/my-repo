@@ -1,0 +1,11 @@
+pipelines:
+  default:
+    - step:
+        name: Testing
+        image: python:3.9
+        caches:
+          - pip
+        script:
+          - pip install --upgrade pip
+          - pip install -r requirements.txt
+          - pytest tests/test.py
